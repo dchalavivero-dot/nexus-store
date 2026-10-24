@@ -82,6 +82,50 @@ img {
     transition-duration: .01ms !important;
   }
 }
+
+/* NEXUS - Futuristic visual upgrade */
+:root {
+  color-scheme: dark;
+  --nexus-bg: #070910;
+  --nexus-blue: #00c8ff;
+  --nexus-purple: #8b5cf6;
+  --nexus-text: #f3f6ff;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--nexus-bg);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 10% 0%, #12305a 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 10%, #30134d 0%, transparent 40%),
+    var(--nexus-bg) !important;
+  color: var(--nexus-text) !important;
+}
+
+input, select {
+  background: #101421 !important;
+  color: var(--nexus-text) !important;
+  border: 1px solid var(--nexus-blue) !important;
+  border-radius: 12px;
+}
+
+button {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px #00c8ff55;
+}
+
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#080b18;color:#f4f6ff}
