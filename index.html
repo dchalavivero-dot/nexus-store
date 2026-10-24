@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b18">
+<title>NEXUS | Marketplace</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#080b18;color:#f4f6ff}
+header{padding:18px 16px;background:#0d1225;border-bottom:1px solid #242c52;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:900;letter-spacing:2px;color:#48dfff}
+.logo span{color:#a46bff}
+header button,.search button{background:#172442;color:white;border:1px solid #34436d;border-radius:10px;padding:10px}
+.hero{padding:35px 20px 30px;background:radial-gradient(ellipse at top,#182c59,#080b18 75%);text-align:center}
+.tag{color:#56e5ff;font-size:11px;letter-spacing:3px;font-weight:bold}
+h1{font-size:36px;margin:18px 0 12px;line-height:1.1}
+h1 span{color:#56dfff}
+.hero p{color:#b4bfdc;line-height:1.6;font-size:14px}
+.primary{margin-top:22px;background:linear-gradient(100deg,#267dff,#a04cff);color:white;border:0;padding:14px 22px;border-radius:10px;font-weight:bold}
+.search{display:flex;gap:8px;padding:15px}
+.search input{min-width:0;flex:1;background:#111a30;border:1px solid #283658;color:white;padding:12px;border-radius:9px}
+section{padding:12px 16px 25px}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:10px 0 17px}
+.section-title h2{font-size:20px}
+.section-title span{font-size:12px;color:#5edfff}
+.filters{display:flex;gap:8px;overflow-x:auto;margin-bottom:18px}
+.filters button{white-space:nowrap;background:#111a30;border:1px solid #293655;color:#cbd5f0;padding:9px 13px;border-radius:20px}
+.filters button.active{background:#203b70;border-color:#4b91ff;color:white}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:#11182b;border:1px solid #253353;border-radius:14px;overflow:hidden}
+.art{height:115px;display:flex;align-items:center;justify-content:center;font-size:48px;background:radial-gradient(circle,#273e72,#12182b 72%)}
+.info{padding:12px}
+.info small{color:#65dfff;font-size:10px}
+.info h3{font-size:14px;margin:8px 0}
+.price{font-size:19px;font-weight:bold}
+.info button{width:100%;margin-top:12px;background:#172849;border:1px solid #4266a5;color:#fff;padding:10px;border-radius:8px}
+.notice{text-align:center;color:#8f9dbc;font-size:12px;padding:20px;line-height:1.6}
+footer{padding:25px 18px;background:#0d1225;border-top:1px solid #26304c;color:#9eaccd;font-size:12px;line-height:2}
+footer strong{color:#60dfff;font-size:18px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">NE<span>X</span>US</div>
+<button onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Explorar ↓</button>
+</header>
+<div class="hero">
+<div class="tag">◆ EL FUTURO DEL COMERCIO ◆</div>
+<h1>Descubre algo<br><span>extraordinario.</span></h1>
+<p>Explora tecnología, accesorios y productos seleccionados en un solo lugar.</p>
+<button class="primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Descubrir productos →</button>
+</div>
+<div class="search">
+<input id="busqueda" placeholder="Buscar productos..." oninput="filtrar()">
+<button onclick="filtrar()">Buscar</button>
+</div>
+<section id="productos">
+<div class="section-title"><h2>Productos destacados</h2><span>EXPLORAR ↗</span></div>
+<div class="filters">
+<button class="active" onclick="categoria('Todos',this)">Todos</button>
+<button onclick="categoria('Tecnología',this)">Tecnología</button>
+<button onclick="categoria('Accesorios',this)">Accesorios</button>
+<button onclick="categoria('Moda',this)">Moda</button>
+</div>
+<div class="grid" id="catalogo">
+<article class="card" data-categoria="Tecnología" data-nombre="audifonos inalámbricos">
+<div class="art">🎧</div><div class="info"><small>TECNOLOGÍA</small><h3>Audífonos inalámbricos</h3><div class="price">$29.99</div><button onclick="avisar()">Ver producto</button></div>
+</article>
+<article class="card" data-categoria="Tecnología" data-nombre="reloj inteligente">
+<div class="art">⌚</div><div class="info"><small>TECNOLOGÍA</small><h3>Reloj inteligente</h3><div class="price">$39.99</div><button onclick="avisar()">Ver producto</button></div>
+</article>
+<article class="card" data-categoria="Accesorios" data-nombre="mochila urbana">
+<div class="art">🎒</div><div class="info"><small>ACCESORIOS</small><h3>Mochila urbana</h3><div class="price">$24.99</div><button onclick="avisar()">Ver producto</button></div>
+</article>
+<article class="card" data-categoria="Moda" data-nombre="zapatillas urbanas">
+<div class="art">👟</div><div class="info"><small>MODA</small><h3>Zapatillas urbanas</h3><div class="price">$49.99</div><button onclick="avisar()">Ver producto</button></div>
+</article>
+</div>
+<p class="notice">Catálogo de demostración · Estos productos y precios son ficticios.<br>NEXUS todavía no procesa compras ni pagos.</p>
+</section>
+<footer><strong>NEXUS</strong><br>El futuro del comercio digital.<br>© 2026 NEXUS · Proyecto en desarrollo</footer>
+<script>
+let seleccion="Todos";
+function categoria(cat,btn){
+seleccion=cat;
+document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+filtrar();
+}
+function filtrar(){
+let q=document.getElementById("busqueda").value.toLowerCase();
+document.querySelectorAll(".card").forEach(c=>{
+c.style.display=(seleccion==="Todos"||c.dataset.categoria===seleccion)&&c.dataset.nombre.includes(q)?"block":"none";
+});
+}
+function avisar(){alert("¡Gracias por tu interés! NEXUS está en desarrollo. Las compras aún no están habilitadas.");}
+</script>
+</body>
+</html>
+
+
