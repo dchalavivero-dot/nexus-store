@@ -5,88 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080b18">
 <title>NEXUS | Marketplace</title>
-
-/* NEXUS — Futuristic visual upgrade */
-:root {
-  color-scheme: dark;
-  --nexus-bg: #070910;
-  --nexus-panel: #101421;
-  --nexus-blue: #00c8ff;
-  --nexus-purple: #8b5cf6;
-  --nexus-text: #f3f6ff;
-  --nexus-muted: #9ba7bd;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background:
-    radial-gradient(ellipse at 10% 0%, #12264a 0%, transparent 42%),
-    radial-gradient(ellipse at 90% 10%, #251344 0%, transparent 38%),
-    var(--nexus-bg);
-  color: var(--nexus-text);
-}
-
-header, nav {
-  backdrop-filter: blur(14px);
-}
-
-button, input, select {
-  font: inherit;
-}
-
-button {
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
-}
-
-input, select {
-  background: #0d1220;
-  color: var(--nexus-text);
-  border: 1px solid #29344c;
-  border-radius: 12px;
-  padding: 12px 14px;
-}
-
-input:focus, select:focus {
-  outline: 2px solid var(--nexus-blue);
-  outline-offset: 2px;
-}
-
-img {
-  max-width: 100%;
-}
-
-@media (max-width: 600px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  input, select, button {
-    max-width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto
-
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  <style>
+ <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#080b18;color:#f4f6ff}
-header{padding:18px 16px;background:#0d1225;border-bottom:1px solid #242c52;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:27px;font-weight:900;letter-spacing:2px;color:#48dfff}
+header{padding:19px 16px;background:#0d1225;border-bottom:1px solid #242c52;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:900;letter-spacing:2px;color:#48dpff}
 .logo span{color:#a46bff}
-header button,.search button{background:#172442;color:white;border:1px solid #34436d;border-radius:10px;padding:10px}
-.hero{padding:35px 20px 30px;background:radial-gradient(ellipse at top,#182c59,#080b18 75%);text-align:center}
+header button,.search button{background:#192442;color:white;border:1px solid #34436d;border-radius:10px;padding:10px}
+.hero{padding:35px 20px 39px;background:radial-gradient(ellipse at top,#182c59,#080b18 75%);text-align:center}
 .tag{color:#56e5ff;font-size:11px;letter-spacing:3px;font-weight:bold}
 h1{font-size:36px;margin:18px 0 12px;line-height:1.1}
 h1 span{color:#56dfff}
