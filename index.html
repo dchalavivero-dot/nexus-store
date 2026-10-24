@@ -2,145 +2,175 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b18">
-<title>NEXUS | Marketplace</title>
- <style>
-/* NEXUS - Futuristic visual upgrade */
-:root {
-  color-scheme: dark;
-  --nexus-bg: #070910;
-  --nexus-blue: #00c8ff;
-  --nexus-purple: #8b5cf6;
-  --nexus-text: #f3f6ff;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: var(--nexus-bg);
-}
-
-body {
-  background:
-    radial-gradient(ellipse at 10% 0%, #12305a 0%, transparent 45%),
-    radial-gradient(ellipse at 90% 10%, #30134d 0%, transparent 40%),
-    var(--nexus-bg) !important;
-  color: var(--nexus-text) !important;
-}
-
-input, select {
-  background: #101421 !important;
-  color: var(--nexus-text) !important;
-  border: 1px solid var(--nexus-blue) !important;
-  border-radius: 12px;
-}
-
-button {
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px #00c8ff55;
-}
-
-@media (max-width: 600px) {
-  body {
-    overflow-x: hidden;
-  }
-}
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070910">
+<title>NEXUS | Marketplace del futuro</title>
+<style>
+:root{--bg:#070910;--panel:#111625;--blue:#00c8ff;--purple:#9255ff;--white:#f5f7ff;--muted:#9ca8c0;--border:#28334b}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#080b18;color:#f4f6ff}
-header{padding:19px 16px;background:#0d1225;border-bottom:1px solid #242c52;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:27px;font-weight:900;letter-spacing:2px;color:#48dpff}
-.logo span{color:#a46bff}
-header button,.search button{background:#192442;color:white;border:1px solid #34436d;border-radius:10px;padding:10px}
-.hero{padding:35px 20px 39px;background:radial-gradient(ellipse at top,#182c59,#080b18 75%);text-align:center}
-.tag{color:#56e5ff;font-size:11px;letter-spacing:3px;font-weight:bold}
-h1{font-size:36px;margin:18px 0 12px;line-height:1.1}
-h1 span{color:#56dfff}
-.hero p{color:#b4bfdc;line-height:1.6;font-size:14px}
-.primary{margin-top:22px;background:linear-gradient(100deg,#267dff,#a04cff);color:white;border:0;padding:14px 22px;border-radius:10px;font-weight:bold}
-.search{display:flex;gap:8px;padding:15px}
-.search input{min-width:0;flex:1;background:#111a30;border:1px solid #283658;color:white;padding:12px;border-radius:9px}
-section{padding:12px 16px 25px}
-.section-title{display:flex;justify-content:space-between;align-items:center;margin:10px 0 17px}
-.section-title h2{font-size:20px}
-.section-title span{font-size:12px;color:#5edfff}
-.filters{display:flex;gap:8px;overflow-x:auto;margin-bottom:18px}
-.filters button{white-space:nowrap;background:#111a30;border:1px solid #293655;color:#cbd5f0;padding:9px 13px;border-radius:20px}
-.filters button.active{background:#203b70;border-color:#4b91ff;color:white}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.card{background:#11182b;border:1px solid #253353;border-radius:14px;overflow:hidden}
-.art{height:115px;display:flex;align-items:center;justify-content:center;font-size:48px;background:radial-gradient(circle,#273e72,#12182b 72%)}
-.info{padding:12px}
-.info small{color:#65dfff;font-size:10px}
-.info h3{font-size:14px;margin:8px 0}
-.price{font-size:19px;font-weight:bold}
-.info button{width:100%;margin-top:12px;background:#172849;border:1px solid #4266a5;color:#fff;padding:10px;border-radius:8px}
-.notice{text-align:center;color:#8f9dbc;font-size:12px;padding:20px;line-height:1.6}
-footer{padding:25px 18px;background:#0d1225;border-top:1px solid #26304c;color:#9eaccd;font-size:12px;line-height:2}
-footer strong{color:#60dfff;font-size:18px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:radial-gradient(ellipse at 10% 0%,#12305a,transparent 40%),radial-gradient(ellipse at 90% 10%,#301344,transparent 35%),var(--bg);color:var(--white);font-family:system-ui,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1100px,92%);margin:auto}
+.announcement{text-align:center;padding:8px;background:#0d1424;border-bottom:1px solid var(--border);font-size:12px;color:#bdc9e5}
+.announcement strong{color:var(--blue)}
+header{position:sticky;top:0;z-index:5;background:#070910ed;backdrop-filter:blur(15px);border-bottom:1px solid var(--border)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:26px;font-weight:950;letter-spacing:3px}
+.logo span{color:var(--blue);text-shadow:0 0 20px var(--blue)}
+.links{display:flex;gap:20px;color:var(--muted);font-size:13px}
+.links a:hover{color:var(--blue)}
+.btn{display:inline-block;border:0;border-radius:10px;padding:11px 16px;background:linear-gradient(110deg,var(--blue),#5875ff,var(--purple));color:#050811;font-weight:850}
+.btn:hover{box-shadow:0 0 22px #00c8ff55}
+.secondary{display:inline-block;border:1px solid #3a4662;border-radius:10px;padding:10px 15px;background:var(--panel);color:var(--white)}
+.hero{padding:70px 0 55px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:850;letter-spacing:3px;margin-bottom:15px}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.07;letter-spacing:-2px}
+.gradient{background:linear-gradient(90deg,var(--blue),#b28bff);color:transparent;background-clip:text;-webkit-background-clip:text}
+.hero p{margin-top:20px;color:var(--muted);max-width:520px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.art{min-height:290px;display:grid;place-items:center;text-align:center;border:1px solid #34466b;border-radius:24px;background:radial-gradient(circle,#12538470,transparent 50%),linear-gradient(140deg,#121a2d,#0b0d18);box-shadow:0 0 45px #2655ff15}
+.orbit{width:165px;height:165px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;position:relative;box-shadow:0 0 35px #00c8ff25,inset 0 0 25px #9255ff20}
+.orbit:before{content:"";position:absolute;inset:15px;border:1px dashed var(--purple);border-radius:50%}
+.orbit strong{font-size:46px;letter-spacing:4px;text-shadow:0 0 22px var(--blue)}
+.art small{display:block;margin-top:15px;letter-spacing:3px;color:#b7d7ff}
+.section{padding:38px 0 55px}
+.section h2{font-size:clamp(25px,4vw,34px)}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.search{margin:22px 0 16px;width:100%;padding:14px;border-radius:12px;border:1px solid #303b56;background:#0d1220;color:white}
+.search:focus{outline:2px solid var(--blue)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filter{padding:8px 14px;border-radius:25px;border:1px solid var(--border);background:#0d1120;color:var(--muted)}
+.filter.active,.filter:hover{color:var(--blue);border-color:var(--blue);background:#0c2030}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.card{overflow:hidden;border:1px solid var(--border);border-radius:16px;background:linear-gradient(150deg,#141a2b,#0c0f19);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#536ca1;box-shadow:0 10px 30px #0005}
+.product-art{min-height:140px;display:grid;place-items:center;font-size:62px;background:radial-gradient(circle,#224d7d65,transparent 65%),#111625;border-bottom:1px solid var(--border)}
+.info{padding:13px}
+.category{font-size:10px;letter-spacing:1px;color:var(--blue);text-transform:uppercase;font-weight:800}
+.info h3{font-size:15px;margin:6px 0}
+.info p{font-size:12px;color:var(--muted);min-height:38px}
+.bottom{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:12px}
+.price{font-size:18px;font-weight:900}
+.demo{font-size:10px;color:#c7b5ff}
+.detail{padding:7px 9px;border:1px solid #3b4c6d;border-radius:8px;background:#111b2d;color:var(--blue);font-size:12px}
+.empty{grid-column:1/-1;text-align:center;padding:30px;border:1px dashed var(--border);border-radius:12px;color:var(--muted)}
+.notice{margin-top:17px;padding:12px;border:1px solid #514174;background:#171127;border-radius:10px;color:#d4c7f6;font-size:12px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.feature{padding:20px;border:1px solid var(--border);border-radius:14px;background:#101421b8}
+.feature h3{margin:8px 0}.feature p,.about p{font-size:13px;color:var(--muted)}
+.about{padding:26px;border:1px solid #333454;border-radius:17px;background:linear-gradient(120deg,#101a2a,#171027)}
+.about p{margin-top:10px;max-width:760px}
+footer{border-top:1px solid var(--border);padding:25px 0;color:var(--muted);font-size:12px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.foot strong{color:white;letter-spacing:2px}
+dialog{width:min(400px,90%);margin:auto;padding:24px;border:1px solid #44577a;border-radius:16px;background:#101421;color:white}
+dialog::backdrop{background:#02040bdd}
+dialog p{color:var(--muted);margin:12px 0}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:45px}.art{min-height:230px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){.nav{min-height:62px}.logo{font-size:22px}.links{gap:10px;font-size:12px}.links a:nth-child(2){display:none}.nav .btn{font-size:12px;padding:9px}.hero{gap:25px}.grid{gap:10px}.product-art{min-height:115px;font-size:50px}.info{padding:10px}.info h3{font-size:13px}.info p{font-size:11px}.price{font-size:15px}.detail{font-size:10px;padding:6px}.features{grid-template-columns:1fr}.art{min-height:210px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
+<div class="announcement"><strong>NEXUS v1.1</strong> · El comercio evoluciona</div>
 <header>
-<div class="logo">NE<span>X</span>US</div>
-<button onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Explorar ↓</button>
+<div class="container nav">
+<a class="logo" href="#inicio">NE<span>X</span>US</a>
+<nav class="links"><a href="#inicio">Inicio</a><a href="#ventajas">Ventajas</a><a href="#nosotros">Nosotros</a></nav>
+<a class="btn" href="#tienda">Explorar ↗</a>
+</div>
 </header>
-<div class="hero">
-<div class="tag">◆ EL FUTURO DEL COMERCIO ◆</div>
-<h1>Descubre algo<br><span>extraordinario.</span></h1>
-<p>Explora tecnología, accesorios y productos seleccionados en un solo lugar.</p>
-<button class="primary" onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})">Descubrir productos →</button>
+<main>
+<section class="container hero" id="inicio">
+<div>
+<div class="eyebrow">● EL COMERCIO EVOLUCIONA</div>
+<h1>Descubre algo <span class="gradient">extraordinario.</span></h1>
+<p>Explora tecnología, accesorios y moda en un espacio diseñado para la próxima generación de compradores.</p>
+<div class="actions"><a class="btn" href="#tienda">Explorar productos ↗</a><a class="secondary" href="#nosotros">Conocer NEXUS</a></div>
 </div>
-<div class="search">
-<input id="busqueda" placeholder="Buscar productos..." oninput="filtrar()">
-<button onclick="filtrar()">Buscar</button>
-</div>
-<section id="productos">
-<div class="section-title"><h2>Productos destacados</h2><span>EXPLORAR ↗</span></div>
-<div class="filters">
-<button class="active" onclick="categoria('Todos',this)">Todos</button>
-<button onclick="categoria('Tecnología',this)">Tecnología</button>
-<button onclick="categoria('Accesorios',this)">Accesorios</button>
-<button onclick="categoria('Moda',this)">Moda</button>
-</div>
-<div class="grid" id="catalogo">
-<article class="card" data-categoria="Tecnología" data-nombre="audifonos inalámbricos">
-<div class="art">🎧</div><div class="info"><small>TECNOLOGÍA</small><h3>Audífonos inalámbricos</h3><div class="price">$29.99</div><button onclick="avisar()">Ver producto</button></div>
-</article>
-<article class="card" data-categoria="Tecnología" data-nombre="reloj inteligente">
-<div class="art">⌚</div><div class="info"><small>TECNOLOGÍA</small><h3>Reloj inteligente</h3><div class="price">$39.99</div><button onclick="avisar()">Ver producto</button></div>
-</article>
-<article class="card" data-categoria="Accesorios" data-nombre="mochila urbana">
-<div class="art">🎒</div><div class="info"><small>ACCESORIOS</small><h3>Mochila urbana</h3><div class="price">$24.99</div><button onclick="avisar()">Ver producto</button></div>
-</article>
-<article class="card" data-categoria="Moda" data-nombre="zapatillas urbanas">
-<div class="art">👟</div><div class="info"><small>MODA</small><h3>Zapatillas urbanas</h3><div class="price">$49.99</div><button onclick="avisar()">Ver producto</button></div>
-</article>
-</div>
-<p class="notice">Catálogo de demostración · Estos productos y precios son ficticios.<br>NEXUS todavía no procesa compras ni pagos.</p>
+<div class="art"><div><div class="orbit"><strong>NX</strong></div><small>THE NEXT MARKETPLACE</small></div></div>
 </section>
-<footer><strong>NEXUS</strong><br>El futuro del comercio digital.<br>© 2026 NEXUS · Proyecto en desarrollo</footer>
+
+<section class="container section" id="tienda">
+<div class="eyebrow">CATÁLOGO DIGITAL</div>
+<h2>Explora el universo NEXUS</h2>
+<p class="sub">Encuentra tu próxima elección.</p>
+<input class="search" id="search" type="search" placeholder="⌕ Buscar productos..." aria-label="Buscar productos">
+<div class="filters">
+<button class="filter active" data-cat="Todos">Todos</button>
+<button class="filter" data-cat="Tecnología">Tecnología</button>
+<button class="filter" data-cat="Accesorios">Accesorios</button>
+<button class="filter" data-cat="Moda">Moda</button>
+</div>
+<div class="grid" id="products" aria-live="polite"></div>
+<p class="notice">Prototipo de demostración: los productos y precios son ficticios. Esta página todavía no procesa pedidos ni pagos reales.</p>
+</section>
+
+<section class="container section" id="ventajas">
+<div class="eyebrow">NUESTRA VISIÓN</div><h2>Más que una tienda</h2><p class="sub">Una base para construir una experiencia mejor.</p>
+<div class="features">
+<article class="feature"><div>◈</div><h3>Diseño moderno</h3><p>Una interfaz futurista adaptada a celulares y computadoras.</p></article>
+<article class="feature"><div>⌕</div><h3>Exploración sencilla</h3><p>Busca productos y filtra el catálogo por categoría.</p></article>
+<article class="feature"><div>⬡</div><h3>Crece paso a paso</h3><p>Una base inicial para incorporar funciones reales más adelante.</p></article>
+</div>
+</section>
+
+<section class="container section" id="nosotros">
+<div class="about"><div class="eyebrow">EL FUTURO SE CONSTRUYE HOY</div><h2>Bienvenido a NEXUS.</h2><p>NEXUS es un proyecto en desarrollo. Las cuentas, vendedores, pedidos, pagos y verificaciones todavía no están implementados.</p></div>
+</section>
+</main>
+<footer><div class="container foot"><strong>NEXUS</strong><span>© 2026 NEXUS. Todos los derechos reservados.</span><span>Versión 1.1 · Prototipo</span></div></footer>
+
+<dialog id="detailDialog"><h2 id="detailTitle">Producto</h2><p id="detailText"></p><button class="btn" id="closeDialog">Entendido</button></dialog>
+
 <script>
-let seleccion="Todos";
-function categoria(cat,btn){
-seleccion=cat;
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-filtrar();
+"use strict";
+const products=[
+{id:1,name:"Auriculares Pulse X",cat:"Tecnología",price:29.99,icon:"🎧",desc:"Auriculares de demostración con diseño moderno."},
+{id:2,name:"Smartwatch Nova",cat:"Tecnología",price:39.99,icon:"⌚",desc:"Reloj inteligente de ejemplo para el catálogo."},
+{id:3,name:"Mochila Urban",cat:"Accesorios",price:24.50,icon:"🎒",desc:"Mochila de muestra con estilo urbano."},
+{id:4,name:"Sneakers Flux",cat:"Moda",price:49.99,icon:"👟",desc:"Calzado de muestra para la sección de moda."},
+{id:5,name:"Teclado Neon",cat:"Tecnología",price:34.99,icon:"⌨️",desc:"Teclado de muestra para un escritorio tecnológico."},
+{id:6,name:"Gorra Shadow",cat:"Moda",price:14.99,icon:"🧢",desc:"Accesorio de moda de demostración."},
+{id:7,name:"Gafas Vision",cat:"Accesorios",price:19.99,icon:"🕶️",desc:"Gafas de ejemplo para el catálogo."},
+{id:8,name:"Altavoz Nova",cat:"Tecnología",price:27.50,icon:"🔊",desc:"Altavoz de demostración."}
+];
+let category="Todos";
+const search=document.getElementById("search");
+const grid=document.getElementById("products");
+const dialog=document.getElementById("detailDialog");
+
+function render(){
+const term=search.value.trim().toLocaleLowerCase("es");
+const list=products.filter(p=>(category==="Todos"||p.cat===category)&&(p.name+" "+p.cat+" "+p.desc).toLocaleLowerCase("es").includes(term));
+if(!list.length){grid.innerHTML='<div class="empty">No encontramos productos. Prueba otra búsqueda.</div>';return;}
+grid.innerHTML=list.map(p=>`<article class="card">
+<div class="product-art" aria-hidden="true">${p.icon}</div>
+<div class="info"><div class="category">${p.cat}</div><h3>${p.name}</h3><p>${p.desc}</p>
+<div class="bottom"><div><div class="price">$${p.price.toFixed(2)}</div><div class="demo">Precio de muestra</div></div><button class="detail" data-id="${p.id}">Detalles</button></div>
+</div></article>`).join("");
 }
-function filtrar(){
-let q=document.getElementById("busqueda").value.toLowerCase();
-document.querySelectorAll(".card").forEach(c=>{
-c.style.display=(seleccion==="Todos"||c.dataset.categoria===seleccion)&&c.dataset.nombre.includes(q)?"block":"none";
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{
+category=btn.dataset.cat;
+document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b===btn));
+render();
+}));
+search.addEventListener("input",render);
+grid.addEventListener("click",e=>{
+const btn=e.target.closest("[data-id]");
+if(!btn)return;
+const p=products.find(item=>item.id===Number(btn.dataset.id));
+if(!p)return;
+document.getElementById("detailTitle").textContent=p.name;
+document.getElementById("detailText").textContent=p.desc+" Precio de demostración: $"+p.price.toFixed(2)+". No se puede comprar desde este prototipo.";
+if(dialog.showModal)dialog.showModal();else alert(p.name+"\n"+p.desc);
 });
-}
-function avisar(){alert("¡Gracias por tu interés! NEXUS está en desarrollo. Las compras aún no están habilitadas.");}
+document.getElementById("closeDialog").addEventListener("click",()=>dialog.close());
+dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close();});
+render();
 </script>
 </body>
 </html>
-
-
